@@ -1,0 +1,183 @@
+/* CSS GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none !important;
+  text-decoration: none !important;
+}
+
+body {
+  font-family: "Urbanist", sans-serif !important;
+  font-size: 16px;
+  background-color: #f8f9f9 !important;
+}
+
+h1 {
+  font-family: "Amatic SC", cursive !important;
+  font-size: 4em !important;
+}
+
+.zone-main {
+  min-height: 50vh !important;
+}
+
+/* CSS NAV / HEADER */
+.logo-gif {
+  width: 150px !important;
+}
+
+.link-profil:hover {
+  color: lightblue !important;
+}
+
+/* CSS FOOTER */
+
+footer {
+  width: 100% !important;
+}
+
+.zone-footer {
+  min-height: 150px;
+}
+
+.icone-b {
+  font-size: 1.5rem !important;
+  color: white;
+  margin-right: 0.5em;
+}
+
+.icone-b:hover {
+  color: #b2babb;
+}
+
+.menu-footer li a {
+  color: white;
+  margin-right: 0.5em;
+}
+
+.menu-footer li a:hover {
+  color: #b2babb;
+}
+
+.zone-copyright {
+  background-color: #34495e !important;
+  width: 100% !important;
+}
+
+/* CSS PAGE INDEX */
+
+.liens-nouveautes {
+  width: 30%;
+}
+
+.img-nouveautes {
+  width: 100%;
+  transition: 0.5s !important;
+}
+
+.img-nouveautes:hover {
+  transform: rotate(-3deg) !important;
+  box-shadow: 0px 1px 36px -7px rgba(0, 0, 0, 0.75) !important;
+  -webkit-box-shadow: 0px 1px 36px -7px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 1px 36px -7px rgba(0, 0, 0, 0.75) !important;
+}
+
+/* CSS PAGE BOUTIQUE */
+
+.accordion-button {
+  color: #000 !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+}
+
+.accordion-button:not(.collapsed)::before {
+  transform: none !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  /* background-image: url(assets/svg/fleche.svg) !important; */
+  transform: rotate(180deg) !important;
+  color: #000 !important;
+}
+
+.titre-produit-boutique:hover {
+  color: #808b96 !important;
+}
+
+/* CSS FICHE PRODUIT */
+
+.img-produit-fiche {
+  width: 18rem;
+}
+
+/* CSS PAGE CONTACT */
+
+.google-map {
+  width: 100%;
+}
+
+/* CSS PAGE PANIER */
+.img-panier {
+  width: 100%;
+}
+
+.liens-supp-produit-panier:hover,
+.titre-produit-panier:hover {
+  color: #808b96 !important;
+}
+/* PARTIE RESPONSIVE */
+
+@media screen and (max-width: 1030px) {
+  .zone-card-fiche-produit {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    width: 95% !important;
+    margin: 1.5em auto;
+  }
+  .zone-card-fiche-produit img {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
+  .zone-card-body {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .zone-map-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #carouselExampleIndicators {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .zone-footer {
+    display: flex !important;
+    flex-direction: column;
+    padding: 2em 0;
+  }
+
+  .zone-administratif {
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .liens-nouveautes {
+    width: 100%;
+  }
+}
