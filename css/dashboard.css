@@ -106,3 +106,15 @@ body {
 .input-couleur {
   height: 38px !important;
 }
+
+.img-products {
+  width: 100px;
+}
+
+.img-product-update {
+  width: 250px;
+}
+
+td {
+  vertical-align: middle !important;
+}
