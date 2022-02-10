@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 04 fév. 2022 à 09:38
--- Version du serveur : 10.4.21-MariaDB
--- Version de PHP : 8.0.12
+-- Généré le : jeu. 10 fév. 2022 à 09:16
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `ecommerce`
 --
-CREATE DATABASE IF NOT EXISTS ecommerce;
 
 -- --------------------------------------------------------
 
@@ -84,6 +83,15 @@ CREATE TABLE `membre` (
   `statut` enum('admin','user') NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `membre`
+--
+
+INSERT INTO `membre` (`id_membre`, `pseudo`, `password`, `nom`, `prenom`, `email`, `civilite`, `ville`, `code_postal`, `adresse`, `statut`) VALUES
+(3, 'admin', '$2y$10$aFZ/Fc1lYXcr13vt96ZcHegPowEAzHjec0Xyd2TIdS8ues6X0B/6O', 'LACROIX', 'Gregory', 'admin@gmail.com', 'homme', 'GAMBAIS', 78950, '45 rue des vieilles tuileries', 'admin'),
+(4, 'GregFormateur', '$2y$10$AoaUhI4v9SJaGmrwO9uHge33ekbh.LaVEMdGHOeKbyFUDyUscFez6', 'LACROIX', 'Gregory', 'gregorylacroix78@gmail.com', 'homme', 'GAMBAIS', 78950, '45 rue des vieilles tuileries', 'user'),
+(9, 'toto', '$2y$10$Q0EnmMEDqDbZ4drdWawQHOM3kmBn7g3fyWqAdJtdro.ZFJM3F8EVq', 'toto', 'toto', 'toto@gmail.com', 'homme', 'totoland', 78000, '45 rue de toto', 'user');
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +111,18 @@ CREATE TABLE `produit` (
   `prix` int(5) NOT NULL,
   `stock` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `produit`
+--
+
+INSERT INTO `produit` (`id_produit`, `reference`, `categorie`, `titre`, `description`, `couleur`, `taille`, `public`, `photo`, `prix`, `stock`) VALUES
+(1, '15A89', 'tee-shirt', 'tee-shirt bleu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper bibendum augue, ac aliquet tellus. Praesent orci lacus, venenatis non lacinia eget, faucibus ut lacus. Sed vel hendrerit mauris. Nam ac urna et ligula rutrum vehicula. Curabitur tincidunt non tortor sit amet finibus. Curabitur nec semper velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et erat nisl. Donec lobortis lobortis pharetra. Etiam sed scelerisque dolor, et rutrum massa. Duis gravida luctus lorem vitae tempor.', '#7665c8', 'm', 'mixte', 'http://localhost/PHP-wf3-1098/09-ecommerce/assets/uploads/15A89-tee-shirt1.jpg', 15, 89),
+(2, '59K12', 'pull', 'pull vert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper bibendum augue, ac aliquet tellus. Praesent orci lacus, venenatis non lacinia eget, faucibus ut lacus. Sed vel hendrerit mauris. Nam ac urna et ligula rutrum vehicula. Curabitur tincidunt non tortor sit amet finibus. Curabitur nec semper velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et erat nisl. Donec lobortis lobortis pharetra. Etiam sed scelerisque dolor, et rutrum massa. Duis gravida luctus lorem vitae tempor.', '#30a152', 's', 'homme', 'http://localhost/PHP-wf3-1098/09-ecommerce/assets/uploads/59K12-tee-shirt10.jpg', 20, 14),
+(3, '46O89', 'sweat', 'sweat orange', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper bibendum augue, ac aliquet tellus. Praesent orci lacus, venenatis non lacinia eget, faucibus ut lacus. Sed vel hendrerit mauris. Nam ac urna et ligula rutrum vehicula. Curabitur tincidunt non tortor sit amet finibus. Curabitur nec semper velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et erat nisl. Donec lobortis lobortis pharetra. Etiam sed scelerisque dolor, et rutrum massa. Duis gravida luctus lorem vitae tempor.', '#e57b57', 'm', 'femme', 'http://localhost/PHP-wf3-1098/09-ecommerce/assets/uploads/46O89-tee-shirt6.jpg', 25, 71),
+(4, '28M39', 'tee-shirt', 'tee-shirt jaune', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper bibendum augue, ac aliquet tellus. Praesent orci lacus, venenatis non lacinia eget, faucibus ut lacus. Sed vel hendrerit mauris. Nam ac urna et ligula rutrum vehicula. Curabitur tincidunt non tortor sit amet finibus. Curabitur nec semper velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et erat nisl. Donec lobortis lobortis pharetra. Etiam sed scelerisque dolor, et rutrum massa. Duis gravida luctus lorem vitae tempor.', '#e1ec93', 'l', 'femme', 'http://localhost/PHP-wf3-1098/09-ecommerce/assets/uploads/28M39-tee-shirt3.jpg', 10, 99),
+(5, '37C73', 'pull', 'pull marron', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper bibendum augue, ac aliquet tellus. Praesent orci lacus, venenatis non lacinia eget, faucibus ut lacus. Sed vel hendrerit mauris. Nam ac urna et ligula rutrum vehicula. Curabitur tincidunt non tortor sit amet finibus. Curabitur nec semper velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et erat nisl. Donec lobortis lobortis pharetra. Etiam sed scelerisque dolor, et rutrum massa. Duis gravida luctus lorem vitae tempor.', '#7d755e', 'xl', 'mixte', 'http://localhost/PHP-wf3-1098/09-ecommerce/assets/uploads/37C73-tee-shirt8.jpg', 15, 28),
+(6, '83L19', 'sweat', 'sweat rouge', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper bibendum augue, ac aliquet tellus. Praesent orci lacus, venenatis non lacinia eget, faucibus ut lacus. Sed vel hendrerit mauris. Nam ac urna et ligula rutrum vehicula. Curabitur tincidunt non tortor sit amet finibus. Curabitur nec semper velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et erat nisl. Donec lobortis lobortis pharetra. Etiam sed scelerisque dolor, et rutrum massa. Duis gravida luctus lorem vitae tempor.', '#cb2e06', 's', 'homme', 'http://localhost/PHP-wf3-1098/09-ecommerce/assets/uploads/83L19-tee-shirt9.jpg', 17, 82);
 
 --
 -- Index pour les tables déchargées
@@ -167,13 +187,13 @@ ALTER TABLE `details_commande`
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_membre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
